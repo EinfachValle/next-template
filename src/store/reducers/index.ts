@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { combineReducers } from "redux";
 
-import uiReducer from "../reducers/uiReducer";
+import uiReducer from "./ui";
 
 export interface AppAction {
   type: string;
