@@ -4,10 +4,10 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-import DE from "../locales/de.json";
-import EN from "../locales/en.json";
-import { changeApplicationLocale } from "../store/actions/uiActions";
-import { store } from "../store/store";
+import DE from "../../locales/de.json";
+import EN from "../../locales/en.json";
+import { changeApplicationLocale } from "../../store/actions/uiActions";
+import { store } from "../../store/store";
 
 const resources = {
   en: { translation: EN },
