@@ -1,19 +1,30 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import React from "react";
+
 import {
   Palette as MuiPalette,
   PaletteOptions as MuiPaletteOptions,
+  TypeText as MuiTypeText,
   PaletteColor,
   PaletteColorOptions,
-  TypeText as MuiTypeText,
 } from "@mui/material/styles";
-import React from "react";
 
 declare module "@mui/material/styles" {
   interface Palette extends MuiPalette {
-    tertiary?: PaletteColor;
-    white?: PaletteColor;
-    black?: PaletteColor;
-    link?: PaletteColor;
+    primary: {
+      tertiary: string;
+      light: string;
+      main: string;
+      dark: string;
+      link: string;
+    };
+    secondary: {
+      white: string;
+      light: string;
+      main: string;
+      dark: string;
+      black: string;
+    };
     icon: {
       primary: string;
       secondary: string;
@@ -60,10 +71,20 @@ declare module "@mui/material/styles" {
   }
 
   interface PaletteOptions extends MuiPaletteOptions {
-    tertiary?: PaletteColorOptions;
-    white?: PaletteColorOptions;
-    black?: PaletteColorOptions;
-    link?: PaletteColorOptions;
+    primary: {
+      tertiary: string;
+      light: string;
+      main: string;
+      dark: string;
+      link: string;
+    };
+    secondary: {
+      white: string;
+      light: string;
+      main: string;
+      dark: string;
+      black: string;
+    };
     icon: {
       primary: string;
       secondary: string;
@@ -117,6 +138,13 @@ declare module "@mui/material/styles" {
   }
 
   interface PaletteColorOptions {
+    tertiary?: string;
+    white?: string;
+    black?: string;
+    link?: string;
+  }
+
+  interface SimplePaletteColorOptions {
     tertiary?: string;
     white?: string;
     black?: string;

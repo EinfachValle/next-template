@@ -1,6 +1,8 @@
+import { PaletteMode } from "@mui/material";
+
 export const THEME = {
-  LIGHT: "dark",
-  DARK: "dark",
+  DARK: "dark" as PaletteMode,
+  LIGHT: "light" as PaletteMode,
 };
 
 export const COLORS = {
