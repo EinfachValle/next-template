@@ -1,8 +1,10 @@
 "use client";
 
+import { Theme } from "@mui/material";
+
 import { THEME } from "../constants/generalConstants";
 
-export const applicationScrollbar = (theme) => {
+export const applicationScrollbar = (theme: Theme) => {
   const isDarkTheme = theme.palette.mode === THEME.DARK;
 
   return {
