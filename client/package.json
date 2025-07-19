@@ -1,6 +1,6 @@
 {
   "name": "next-template",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "author": {
@@ -50,7 +50,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "@types/node": "^20",
+    "@types/node": "^24.0.15",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/redux-logger": "^3.0.13",

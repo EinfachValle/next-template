@@ -2,90 +2,108 @@
 
 A modern, scalable fullstack template using:
 
-- **Next.js (App Router)**
-- **MongoDB** via Mongoose
+- **Next.js (App Router)** in `client/`
+- **Express + MongoDB** via Mongoose in `server/`
 - **Socket.IO** (client & server)
 - **Redux** (classic structure with actions/reducers)
 - **Material-UI (MUI)**
 - **i18n** with `next-i18next`
-- **TypeScript**
+- **TypeScript (frontend only)**
 
 ---
 
 ## 📁 Project Structure
 
 ```
-src/
-├── app/                # Next.js App Router structure
-│   └── auth/           # Auth pages
-├── components/         # Shared UI components
-├── constants/          # Static app-wide values
-├── hooks/              # Custom React hooks
-├── lib/
-│   ├── config/         # Init and configuration files
-│   ├── logger/         # Client/server logging
-│   └── services/       # MongoDB, Socket.IO etc.
-├── locales/            # i18n translation files
-├── server/             # Custom server logic (optional)
-├── store/              # Redux store, actions, reducers
-├── theme/              # MUI theming and overrides
-├── types/              # Global TypeScript types
-├── utils/              # Utility functions
-└── middleware.ts       # Next.js Edge Middleware
+project-root/
+├── client/ # Frontend app (Next.js)
+│ ├── public/
+│ ├── src/
+│ │ ├── app/
+│ │ ├── components/
+│ │ ├── constants/
+│ │ ├── hooks/
+│ │ ├── lib/
+│ │ ├── locales/
+│ │ ├── store/
+│ │ ├── theme/
+│ │ ├── types/
+│ │ └── utils/
+│ ├── middleware.ts
+│ └── package.json
+│
+├── server/ # Backend app (Express + Socket.IO + MongoDB)
+│ ├── app/
+│ │ ├── routes/
+│ │ ├── sockets/
+│ │ ├── models/
+│ │ └── index.js
+│ ├── .env
+│ └── package.json
+│
+└── README.md
+
 ```
 
 ---
 
 ## 🧰 Scripts
 
+### In `client/` (Next.js)
+
 ```bash
-yarn dev          # Start dev server
-yarn build        # Build for production
-yarn start        # Start production server
+yarn dev          # Start frontend dev server
+yarn build        # Build frontend for production
+yarn start        # Start frontend server
+```
+
+### In `server/` (Express)
+
+```bash
+yarn dev          # Start backend dev server with nodemon or ts-node-dev
+yarn start        # Start compiled backend (e.g. node dist/index.js)
 ```
 
 ---
 
 ## 🌐 Environment Variables
 
-Copy `.env.example` to `.env.local` and configure:
+### client/.env.local
 
 ```env
-MONGODB_URI=
-NEXT_PUBLIC_SOCKET_URL=
+NEXT_PUBLIC_SOCKET_URL=http://localhost:5000
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+### server/.env
+
+```env
+MONGODB_URI=mongodb://localhost:27017/mydb
+PORT=5000
 ```
 
 ---
 
 ## 🌍 i18n
 
-Localized via `next-i18next` under `public/locales/{lang}`. Default: `en`, `de`.
+Localized via `next-i18next` under `client/public/locales/{lang}`. Default: `en`, `de`.
 
 ---
 
 ## 🧠 Redux
 
-Redux is split by feature (classic style):
+Redux is split by feature (classic structure) under `client/src/store/`:
 
-- `store/actions`
-- `store/reducers`
-- `store/types`
+- `actions/`
+- `reducers/`
+- `types/`
 
 ---
 
 ## 🔌 Socket.IO
 
-Socket client setup is under `lib/services/socketClient.ts`.
-Server socket handling in `server/index.ts`.
-
----
-
-## 🧪 Testing (Optional)
-
-This template is test-ready. Add:
-
-- Jest / Vitest for unit tests
-- Cypress / Playwright for e2e tests
+- Client setup: `client/src/lib/services/socketClient.ts`
+- Server events: `server/app/sockets/`
 
 ---
 

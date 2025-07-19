@@ -43,3 +43,8 @@ export const LANGUAGES = {
     key: "de-DE",
   },
 };
+
+export const CONTEXT_PATH = process.env.NEXT_PUBLIC_API_URL || "";
+// export const MY_URL = `${window.location.origin}${process.env.NEXT_PUBLIC_API_URL}`;
+// export const FILE_URL = `${MY_URL}/api/document/download/`;
+// export const AVATAR_URL = `${MY_URL}/api/files/avatar`;
